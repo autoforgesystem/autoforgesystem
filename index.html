@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoForgeSystem</title>
+  <link rel="stylesheet" href="styles.css" />
+
+<style>
+  .chat-float {
+    position: fixed;
+    bottom: 20px;   /* Distance from the bottom */
+    right: 20px;    /* Distance from the right */
+    z-index: 1000;  /* Ensures it stays on top */
+    padding: 12px 16px;
+    background-color: #0078D4;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .chat-float:hover {
+    background-color: #005a9e;
+  }
+</style>
+
+</head>
+
+<div id="chat-panel">
+  <div id="chat-header">🤖 AutoForgeSystem AI Agent</div>
+  <div id="chat-messages"></div>
+  <form id="chat-form">
+    <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<body>
+  <header>
+    <h1>AutoForgeSystem</h1>
+    <p>Automation with Personality</p>
+    <nav>
+      <ul>
+        <li><a href="#services">What We Do</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#tech">Tech Stack</a></li>
+        <li><a href="#contact">Contact</a></li>
+          </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Scalable Automation. Branded Delivery.</h2>
+    <p>Deploy bots, workflows, and diagnostics with public-facing polish.</p>
+    <a href="#contact" class="cta-button">Schedule a Demo</a>
+  </section>
+
+  <section id="services">
+    <h2>What We Do</h2>
+    <ul>
+      <li>Multi-channel bots: Telegram, WhatsApp, Messenger</li>
+      <li>AI Agents with n8n and Hugging Face</li>
+      <li>Branded UI and fallback logic</li>
+    </ul>
+  </section>
+
+  <section id="solutions">
+    <h2>Solutions</h2>
+    <div class="grid">
+      <div>
+        <h3>For Businesses</h3>
+        <p>Order alerts, branded emails, customer support bots</p>
+      </div>
+      <div>
+        <h3>For Developers</h3>
+        <p>Diagnostic blocks, API scaffolds, binary-safe flows</p>
+      </div>
+      <div>
+        <h3>For Creatives</h3>
+        <p>Asset editing, social automation, voice transcription</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech">
+    <h2>Tech Stack</h2>
+    <p>Docker, PowerShell, Python, ffmpeg, OpenSSL, Google Apps Script</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: autoforgesystem@gmail.com</p>
+    <p>Telegram: @autoforgesystembot</p>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+  <p>© 2025 AutoForgeSystem. All rights reserved.</p>
+  <div class="social-links">
+    <a href="https://www.youtube.com/@AutoForgeSystem" target="_blank" aria-label="YouTube">
+      <img src="Youtube.svg" alt="YouTube" />
+    </a>
+    <a href="https://www.facebook.com/people/Auto-Forge-System/61582314452308/" target="_blank" aria-label="Facebook">
+      <img src="Facebook.svg" alt="Facebook" />
+    </a>
+    <a href="https://t.me/autoforgesystembot" target="_blank" aria-label="Telegram">
+      <img src="Telegram.svg" alt="Telegram" />
+    </a>
+  </div>
+</footer>
+
+<button id="toggle-chat" class="chat-float">🤖 AI Agent</button>
+
+</body>
+<script>
+  const toggleButton = document.getElementById('toggle-chat');
+  const chatPanel = document.getElementById('chat-panel');
+
+  toggleButton.addEventListener('click', () => {
+    chatPanel.style.display = chatPanel.style.display === 'none' ? 'block' : 'none';
+  });
+</script>
+
+
+
+</html>
