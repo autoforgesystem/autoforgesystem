@@ -74,6 +74,7 @@
     }
   </style>
 
+
    
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -171,28 +172,48 @@
     panel.style.display = panel.style.display === 'flex' ? 'none' : 'flex';
   }
 
-  function sendMessage() {
-    const input = document.getElementById('user-message');
-    const message = input.value.trim();
-    if (message) {
-      const chatBox = document.getElementById('chat-messages');
+ function sendMessage() {
+  const input = document.getElementById('user-message');
+  const message = input.value.trim();
+  if (message) {
+    const chatBox = document.getElementById('chat-messages');
 
-      // User message
-      const userBubble = document.createElement('div');
-      userBubble.className = 'message user-message';
-      userBubble.textContent = message;
-      chatBox.appendChild(userBubble);
+    // User message bubble
+    const userBubble = document.createElement('div');
+    userBubble.className = 'message user-message';
+    userBubble.textContent = message;
+    chatBox.appendChild(userBubble);
 
-      // Simulated bot reply (replace with webhook or iframe logic)
+    // Send to n8n webhook
+    fetch('https://n8n-yawon.onrender.com/webhook/19c213cc-63fa-4d76-a9b5-8a6b720be8fb', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: message,
+        sessionId: Date.now().toString()
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
       const botBubble = document.createElement('div');
       botBubble.className = 'message bot-message';
-      botBubble.textContent = generateBotReply(message);
+      botBubble.textContent = data.reply || "Received!";
       chatBox.appendChild(botBubble);
-
-      input.value = '';
       chatBox.scrollTop = chatBox.scrollHeight;
-    }
+    })
+    .catch(error => {
+      const botBubble = document.createElement('div');
+      botBubble.className = 'message bot-message';
+      botBubble.textContent = "Error sending message.";
+      chatBox.appendChild(botBubble);
+    });
+
+    input.value = '';
   }
+}
+
 
   function generateBotReply(userText) {
     // Placeholder logic — replace with real AI response
