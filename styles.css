@@ -52,7 +52,7 @@ nav a:hover {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 2rem 2rem 4rem 2rem;
   background-image: url('background.jpg');
   background-size: cover;
   background-position: center;
@@ -65,14 +65,14 @@ nav a:hover {
 .hero h1 {
   font-size: 2.5rem;
   margin: 0; /* Remove margin */
-  padding: 1rem 0 0.5rem 0; /* Top and bottom spacing only */
+  padding: 1rem 1rem 0; /* Top and bottom spacing only */
 }
 
 .hero p {
   font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto;
-  padding-bottom: 1rem; /* Bottom spacing to define section height */
+  padding-bottom: rem; /* Bottom spacing to define section height */
 }
 
 /* Features Section */
@@ -456,3 +456,24 @@ nav a:hover, button:hover {
   transition: all 0.3s ease-in-out;
 }
 
+.hero-container {
+  position: relative;
+  display: inline-block; /* or block, depending on layout */
+}
+
+.hero-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Black with 50% opacity */
+  border-radius: 1px; /* optional */
+  z-index: 1;
+}
