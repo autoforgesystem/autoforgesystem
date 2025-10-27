@@ -52,8 +52,12 @@ nav a:hover {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 0; /* Remove all padding */
-  background: linear-gradient(to right, #1e2f47, #2a3f5f);
+  padding: 2rem 2rem 1rem 2rem;
+  background-image: url('background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
 }
 
 .hero h1 {
