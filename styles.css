@@ -51,20 +51,22 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(to right, #1e2f47, #2a3f5f);
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 0; /* Remove all padding */
+  background: linear-gradient(to right, #1e2f47, #2a3f5f);
 }
 
 .hero h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin: 0; /* Remove margin */
+  padding: 1rem 0 0.5rem 0; /* Top and bottom spacing only */
 }
 
 .hero p {
   font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto;
+  padding-bottom: 1rem; /* Bottom spacing to define section height */
 }
 
 /* Features Section */

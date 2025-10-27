@@ -96,35 +96,39 @@
   </section>
 
   <section class="features" id="features">
-    <div class="feature">
-      <h3>🔍 Business Analysis</h3>
-      <p>AI bots analyze your operations and uncover optimization opportunities.</p>
-    </div>
-    <div class="feature">
-      <h3>🤖 Bot Deployment</h3>
-      <p>Deploy Messenger, Telegram, or WhatsApp bots tailored to your brand.</p>
-    </div>
-    <div class="feature">
-      <h3>📊 Workflow Automation</h3>
-      <p>Automate repetitive tasks and streamline communication across platforms.</p>
-    </div>
-    <div class="feature">
-      <h3>🧠 AI Strategy Consulting</h3>
-      <p>Get expert guidance on integrating AI into your business model.</p>
-    </div>
-  </section>
+  <a href="business_analysis.html" class="feature" style="text-decoration: none; color: inherit;">
+    <h3>🔍 Business Analysis</h3>
+    <p>AI bots analyze your operations and uncover optimization opportunities.</p>
+  </a>
+
+  <a href="bot_deployment.html" class="feature" style="text-decoration: none; color: inherit;">
+    <h3>🤖 Bot Deployment</h3>
+    <p>Deploy Messenger, Telegram, or WhatsApp bots tailored to your brand.</p>
+  </a>
+
+  <a href="workflow_automation.html" class="feature" style="text-decoration: none; color: inherit;">
+    <h3>📊 Workflow Automation</h3>
+    <p>Automate repetitive tasks and streamline communication across platforms.</p>
+  </a>
+
+  <a href="ai_strategy.html" class="feature" style="text-decoration: none; color: inherit;">
+    <h3>🧠 AI Strategy Consulting</h3>
+    <p>Get expert guidance on integrating AI into your business model.</p>
+  </a>
+</section>
 
   <section id="contact-form" class="contact-section">
   <h2>Contact Us</h2>
   <p>Email: <a href="mailto:autoforgesystem@gmail.com">autoforgesystem@gmail.com</a></p>
   <p>Telegram: <a href="https://t.me/autoforgesystembot" target="_blank">@autoforgesystembot</a></p>
 
-  <form onsubmit="submitContactForm(event)">
-    <input type="text" id="contact-name" placeholder="Your Name" required />
-    <input type="email" id="contact-email" placeholder="Your Email" required />
-    <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  <form id="contactForm">
+  <input type="text" id="contact-name" placeholder="Your Name" required />
+  <input type="email" id="contact-email" placeholder="Your Email" required />
+  <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
 </section>
 
  <footer id="contact">
@@ -220,6 +224,7 @@
     return "Thanks for your message! We'll analyze your business needs shortly.";
   }
 </script>
+
 
 
 
