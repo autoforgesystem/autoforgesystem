@@ -28,6 +28,12 @@
       height: 40px;
       margin-right: 10px;
     }
+
+    h4 {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
     nav a {
       color: #fff;
       margin-left: 20px;
@@ -80,8 +86,6 @@
       font-size: 0.9rem;
     }
   </style>
-
-
    
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -93,6 +97,8 @@
 </div>
 
   <header>
+
+    
     <div class="logo">
       <img src="autoforgesystem_logo.png" alt="AutoForgeSystem Logo" />
       <h2>AutoForgeSystem</h2>
@@ -130,6 +136,51 @@
     <p>Get expert guidance on integrating AI into your business model.</p>
   </a>
 </section>
+
+
+
+
+<h2 style="text-align: center; margin-top: 40px;">📰 Daily AI News</h2>
+<div class="news-wrapper">
+  <div class="news-grid" id="news-container">Loading...</div>
+</div>
+
+<script>
+  const sheetID = '1ePccKeGj-pkilNXPciXvuwt3Kszig3TrUTgDgkHXPlU';
+  const range = 'daily_ai_news';
+  const apiKey = 'AIzaSyAV06XlWvSicp-Ms3ai6KxnR4kkTBofr2Y';
+
+  fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetID}/values/${range}?key=${apiKey}`)
+    .then(response => response.json())
+    .then(data => {
+      const rows = data.values;
+      const headers = rows[0];
+      const latestItems = rows.slice(-3); // Last 3 entries
+      const container = document.getElementById('news-container');
+      container.innerHTML = '';
+
+      latestItems.forEach(row => {
+        const item = {};
+        headers.forEach((header, i) => item[header] = row[i] || '');
+
+        const card = document.createElement('div');
+        card.className = 'news-card';
+        card.innerHTML = `
+          <img src="${item.image_url}" alt="${item.title}">
+          <div class="news-content">
+            <div class="news-title">${item.title}</div>
+            <div class="news-snippet">${item.content.slice(0, 100)}...</div>
+            <div class="news-full">${item.content}</div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    })
+    .catch(error => {
+      document.getElementById('news-container').innerHTML = 'Failed to load news.';
+      console.error('Error fetching sheet:', error);
+    });
+</script>
 
   <section id="contact-form" class="contact-section">
   <h2>Contact Us</h2>
@@ -295,6 +346,8 @@ function showSuccessModal(text) {
 }
 </script>
 
+
+  
 
 </body>
 </html>
